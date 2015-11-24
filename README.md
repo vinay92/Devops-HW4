@@ -58,3 +58,6 @@ We demonstrate the functionality of deploying dockerized application to blue and
 * Commit those changes using the following command - ``` git commit -m "MSG" ```. Using the post-commit hook, this pulls the image from the registry, updates it and pushes it back to the registry.
 * Now push to either blue or green. Now the updated image in the registry is pulled and corresponding changes are made in the blue or the green slice. 
 * This does not affect the other slice. Doing a curl on either of the slices shows that these changes are not reflected in the slice which has not been pushed to.
+
+<h3>Screencast</h3>
+[Link](www.google.com)
