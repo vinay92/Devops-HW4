@@ -47,7 +47,7 @@ We demonstrate the functionality of deploying dockerized application to blue and
   
   where file://ROOT is the path to the blue.git and green.git directories in the App directory in your host.\
   
-* Now make any change to the main.js file in the App directory. This updates the image in the registry.
-* Commit those changes using the following command - ``` git commit -m "MSG" ``` 
-* Push to either blue or green. Now the image in the registry is pulled and corresponding changes are made in the blue or the green slice. 
-* This affect the other slice. Doing on the curl on either of the slices shows that these changes are not reflected in the slice which has not been pushed to.
+* Now make any change to the main.js file in the App directory. 
+* Commit those changes using the following command - ``` git commit -m "MSG" ```. Using the post-commit hook, this pulls the image from the registry, updates it and pushes it back to the registry.
+* Now push to either blue or green. Now the updated image in the registry is pulled and corresponding changes are made in the blue or the green slice. 
+* This does not affect the other slice. Doing a curl on either of the slices shows that these changes are not reflected in the slice which has not been pushed to.
