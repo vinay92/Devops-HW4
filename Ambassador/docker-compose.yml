@@ -1,0 +1,8 @@
+custom-redis_ambassador:
+    image: svendowideit/ambassador
+    container_name: custom_redis_ambassador
+    expose:
+     - 6379
+    environment:
+     - REDIS_PORT_6379_TCP=tcp://162.243.12.31:6379
+

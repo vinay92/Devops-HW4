@@ -1,0 +1,3 @@
+#!/bin/bash
+
+socat -d -d -u OPEN:file.txt,rdonly tcp-L:9001,fork,reuseaddr

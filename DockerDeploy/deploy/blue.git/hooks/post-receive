@@ -1,0 +1,7 @@
+#!/bin/bash
+GIT_WORK_TREE=/home/vinay/Desktop/sem3/devops/HW/HW4/part3/deploy/blue-www git checkout -f
+docker pull localhost:5000/dockerdeployimage:latest
+docker rm  -f dockerappblue
+docker rmi localhost:5000/dockerdeployimage:current
+docker tag localhost:5000/dockerdeployimage:latest localhost:5000/dockerdeployimage:current
+docker run -p 9877:8080 -d --name dockerappblue localhost:5000/dockerdeployimage:latest
