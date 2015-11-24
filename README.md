@@ -32,5 +32,22 @@ To see the working of this functionality follow the below steps:
 * In the output of ```env``` take note of the "LINK1_PORT_9001_TCP_ADDR" variable and then execute the following command in the shell: </br>
 
   ``` curl <LINK1_PORT_9001_TCP_ADDR>:9001```
-*This shows the content inside the file.txt which we generated in container1.
+* This shows the content inside the file.txt which we generated in container1.
 
+<h3>Docker Deploy</h3>
+
+We demonstrate the functionality of deploying dockerized application to blue and green slices. To see the working of this functionality follow the below steps:
+
+* After cloning this repository CD into DockerDeploy directory which has App and Deploy subdirectories.
+* Run a registry for docker images on your host on port 5000. See [here](https://docs.docker.com/registry/deploying/) for more information on how to run the repository.
+* Execute the following commands in the deploy directory: </br>
+
+  ```git remote add blue file://$ROOT/blue.git```</br>
+  ```git remote add green file://$ROOT/green.git```</br>
+  
+  where file://ROOT is the path to the blue.git and green.git directories in the App directory in your host.\
+  
+* Now make any change to the main.js file in the App directory. This updates the image in the registry.
+* Commit those changes using the following command - ``` git commit -m "MSG" ``` 
+* Push to either blue or green. Now the image in the registry is pulled and corresponding changes are made in the blue or the green slice. 
+* This affect the other slice. Doing on the curl on either of the slices shows that these changes are not reflected in the slice which has not been pushed to.
