@@ -24,4 +24,13 @@ To see the working of this functionality follow the below steps:
 
   ``` docker build -t container2image ```</br>
   
-*
+* In order to link this container to container1 and to read the content of the file, execute the follwing command: </br>
+
+  ``` docker run -i --link container1:link1 container2image /bin/bash```</br>
+  
+* This opens up an interactive terminal. Execute the command ```env``` in the terminal which displays the current environment variables.
+* In the output of ```env``` take note of the "LINK1_PORT_9001_TCP_ADDR" variable and then execute the following command in the shell: </br>
+
+  ``` curl <LINK1_PORT_9001_TCP_ADDR>:9001```
+*This shows the content inside the file.txt which we generated in container1.
+
