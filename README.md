@@ -60,4 +60,5 @@ We demonstrate the functionality of deploying dockerized application to blue and
 * This does not affect the other slice. Doing a curl on either of the slices shows that these changes are not reflected in the slice which has not been pushed to.
 
 <h3>Screencast</h3>
-[Link](https://youtu.be/SqsqWyZNAKE)
+[Link to part1](https://youtu.be/SqsqWyZNAKE)
+[Link to part2](https://youtu.be/DA7CJDotcr0)
