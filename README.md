@@ -34,6 +34,13 @@ To see the working of this functionality follow the below steps:
   ``` curl <LINK1_PORT_9001_TCP_ADDR>:9001```
 * This shows the content inside the file.txt which we generated in container1.
 
+<h3>Ambassador pattern</h3>
+
+* In order to see the working of the ambassador pattern spin up two hosts and put the IP of the server in docker-compose.yml file.
+* Deploy the compose files to the server and host respectively and execute the following command ``` docker-compose up -d```
+* Now run the command.sh file to run the redis CLI. 
+* Enter set and get commands to check the working of the application.
+
 <h3>Docker Deploy</h3>
 
 We demonstrate the functionality of deploying dockerized application to blue and green slices. To see the working of this functionality follow the below steps:
